@@ -6,7 +6,7 @@
 class SuffixTree {
 private:
     std::string text;          // Входная строка
-    Node* root;                // Корневой узел дерева
+    Node* root;                // Корневой узел дерева 
     Node* active_node;         // Активный узел
     int active_edge;           // Активное ребро (индекс в строке)
     int active_length;         // Длина активного ребра
