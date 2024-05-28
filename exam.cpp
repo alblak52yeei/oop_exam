@@ -12,7 +12,7 @@ int main() {
     // Подстрока для поиска
     string pattern = "afa"; 
     // Ищем подстроку
-    int index = suffixTree.search(pattern); 
+    int index = suffixTree.search(pattern);
 
     // Если подстрока найдена, выводим индекс
     if (index != -1) {

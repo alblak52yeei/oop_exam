@@ -41,7 +41,7 @@ void SuffixTree::extendSuffixTree(int index) {
         // Если нет пути по текущему символу
         if (active_node->children[text[active_edge]] == nullptr) { 
             // Создаем новый лист
-            active_node->children[text[active_edge]] = createNode(index, &end_point); 
+            active_node->children[text[active_edge]] = createNode(index, &end_point);
 
             last_added_node = nullptr;
         }

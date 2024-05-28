@@ -17,7 +17,6 @@ private:
     void extendSuffixTree(int index);
     void buildSuffixTree();
     int searchSubString(const std::string& substring);
-
 public:
     SuffixTree(const std::string& str);
     int search(const std::string& substring);
