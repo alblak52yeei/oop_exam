@@ -34,29 +34,51 @@ Node — структура, представляющая узел суффик�
 Создает суффиксное дерево для заданной строки и ищет подстроку, выводя результат.
 
 ## Uml диаграммы
---------------------------------------
-|             Node                   |
---------------------------------------
-| - start: int                       | 
-| - end: int*                        |
-| - suffix_link: Node*               |
-| - children: Node*[256]             |
-| + Node(start: int, end: int*, suffix_link: Node*)        |
-| + length(current_index: int): int |
+```mermaid
+classDiagram
+    class Node {
+        int start
+        int* end
+        Node* suffix_link
+        Node* children[256]
+        Node(int start, int* end, Node* suffix_link = nullptr)
+        int length(int current_index)
+    }
 
+    class SuffixTree {
+        string text
+        Node* root
+        Node* active_node
+        int active_edge
+        int active_length
+        int remaining_suffixes
+        int end_point
+        SuffixTree(const string& str)
+        int search(const string& substring)
+    }
 
------------------------
-|     SuffixTree      |
------------------------
-| - text: std::string |
-| - root: Node*       |
-| - active_node: Node*|
-| - active_edge: int  |
-| - active_length: int|
-| - remaining_suffixes: int |
-| - end_point: int |
-| + SuffixTree(text: std::string) |
-| + search(substring: std::string): int |
+    Node <-- SuffixTree : uses
+
+### Объяснение:
+
+- **Класс `Node`**:
+  - `start`: начальный индекс ребра.
+  - `end`: указатель на конечный индекс ребра.
+  - `suffix_link`: ссылка на суффиксный узел.
+  - `children`: массив указателей на дочерние узлы.
+  - Конструктор для инициализации узла.
+  - `length`: метод для вычисления длины ребра.
+
+- **Класс `SuffixTree`**:
+  - `text`: входная строка.
+  - `root`: указатель на корневой узел дерева.
+  - `active_node`: указатель на текущий активный узел.
+  - `active_edge`: индекс текущего активного ребра.
+  - `active_length`: длина текущего активного ребра.
+  - `remaining_suffixes`: количество оставшихся суффиксов для добавления.
+  - `end_point`: конечный индекс текущего суффикса.
+  - Конструктор для инициализации суффиксного дерева.
+  - `search`: метод для поиска подстроки в дереве.
 
 
 
