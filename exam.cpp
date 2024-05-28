@@ -1,20 +1,20 @@
-п»ї#include <iostream>
+#include <iostream>
 #include "SuffixTree.h"
 
 using namespace std;
 
 int main() {
-    // Р’С…РѕРґРЅР°СЏ СЃС‚СЂРѕРєР°
+    // Входная строка
     string text = "abceafabcbananabc"; 
-    // РЎРѕР·РґР°РµРј СЃСѓС„С„РёРєСЃРЅРѕРµ РґРµСЂРµРІРѕ
+    // Создаем суффиксное дерево
     SuffixTree suffixTree(text);
 
-    // РџРѕРґСЃС‚СЂРѕРєР° РґР»СЏ РїРѕРёСЃРєР°
+    // Подстрока для поиска
     string pattern = "afa"; 
-    // РС‰РµРј РїРѕРґСЃС‚СЂРѕРєСѓ
+    // Ищем подстроку
     int index = suffixTree.search(pattern);
 
-    // Р•СЃР»Рё РїРѕРґСЃС‚СЂРѕРєР° РЅР°Р№РґРµРЅР°, РІС‹РІРѕРґРёРј РёРЅРґРµРєСЃ
+    // Если подстрока найдена, выводим индекс
     if (index != -1) {
         cout << "Found at index: " << index << endl;
     }
