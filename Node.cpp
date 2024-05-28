@@ -1,14 +1,14 @@
 #include "Node.h"
-#include <algorithm> // Для функции std::min
+#include <algorithm> // Р”Р»СЏ С„СѓРЅРєС†РёРё std::min
 
 using namespace std;
 
 Node::Node(int start, int* end, Node* suffix_link) : start(start), end(end), suffix_link(suffix_link) {
     for (int i = 0; i < 256; ++i) {
-        children[i] = nullptr; // Инициализация всех детей как nullptr
+        children[i] = nullptr; // РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ РІСЃРµС… РґРµС‚РµР№ РєР°Рє nullptr
     }
 }
 
 int Node::length(int current_index) {
-    return min(*end, current_index + 1) - start; // Возвращаем длину ребра
+    return min(*end, current_index + 1) - start; // Р’РѕР·РІСЂР°С‰Р°РµРј РґР»РёРЅСѓ СЂРµР±СЂР°
 }
