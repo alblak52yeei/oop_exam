@@ -4,15 +4,25 @@
 using namespace std;
 
 int main() {
+    // Локализация
+    setlocale(0, "");
+
     // Входная строка
-    string text = "abceafabcbananabc"; 
-    // Создаем суффиксное дерево
-    SuffixTree suffixTree(text);
+    string text; 
+
+    cout << "Введите строку: ";
+    cin >> text;
 
     // Подстрока для поиска
-    string pattern = "afa"; 
+    string pattern; 
+
+    cout << "Введите подстроку: ";
+    cin >> pattern;
+
+    // Создаем суффиксное дерево
+    SuffixTree suffixTree(text);
     // Ищем подстроку
-    int index = suffixTree.search(pattern);
+    int index = suffixTree.search(pattern); 
 
     // Если подстрока найдена, выводим индекс
     if (index != -1) {
